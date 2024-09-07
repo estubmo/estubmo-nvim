@@ -78,7 +78,6 @@ return {
         ["<leader>k"] = { "<cmd>lnext<CR>zz", desc = "which_key_ignore" },
         ["<leader>j"] = { "<cmd>lprev<CR>zz", desc = "which_key_ignore" },
 
-        -- keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
         ["<leader>fg"] = {
           "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
           desc = "Find words (Args)",
@@ -93,8 +92,6 @@ return {
         },
         ["<CR>"] = { "o<Esc>", desc = "which_key_ignore" },
         ["<S-CR>"] = { "O<Esc>", desc = "which_key_ignore" },
-        -- nnoremap <Leader>L "ayiwOconsole.log('<C-R>a:', <C-R>a);<Esc>
-        -- ["<leader>L"] = { "ayiwoconsole.log('<C-R>a:', <C-R>a);<Esc>", desc = "Console.log word under cursor" },
         ["<leader>gv"] = { 
           function()
             if next(require('diffview.lib').views) == nil then
@@ -104,7 +101,10 @@ return {
             end
           end,
           desc = "Toggle Diffview" },
-        
+        ["<leader>gh"] = { 
+          "<cmd>DiffviewFileHistory %<CR>",
+          desc = "Open Diffview file history for current file" 
+        },
          ["<leader>fv"] =  {
           function()
             if (vim.api.nvim_buf_get_option(0, "filetype")=="netrw")

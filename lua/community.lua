@@ -21,7 +21,6 @@ return {
   { import = "astrocommunity.pack/tailwindcss" },
   { import = "astrocommunity.pack/typescript" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
-  { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.scrolling/neoscroll-nvim" },
   { import = "astrocommunity.scrolling/satellite-nvim" },
