@@ -1,3 +1,4 @@
+-- Unused until bug with diagnostic text is fixed
 ---@type LazySpec
 return {
   {

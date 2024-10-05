@@ -67,6 +67,24 @@ return {
       -- This can be found in the `lua/lazy_setup.lua` file
       -- },
     },
+    autocmds = {
+      -- disable alpha autostart
+      alpha_autostart = false,
+      restore_session = {
+        {
+          event = "VimEnter",
+          desc = "Restore previous directory session if neovim opened with no arguments",
+          nested = true, -- trigger other autocommands as buffers open
+          callback = function()
+            -- Only load the session if nvim was started with no args
+            if vim.fn.argc(-1) == 0 then
+              -- try to load a directory session using the current working directory
+              require("resession").load(vim.fn.getcwd(), { dir = "dirsession", silence_errors = true })
+            end
+          end,
+        },
+      },
+    },
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
@@ -78,7 +96,7 @@ return {
         ["<leader>k"] = { "<cmd>lnext<CR>zz", desc = "which_key_ignore" },
         ["<leader>j"] = { "<cmd>lprev<CR>zz", desc = "which_key_ignore" },
 
-        ["<leader>fg"] = {
+        ["<leader>fe"] = {
           "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
           desc = "Find words (Args)",
         },
@@ -92,28 +110,28 @@ return {
         },
         ["<CR>"] = { "o<Esc>", desc = "which_key_ignore" },
         ["<S-CR>"] = { "O<Esc>", desc = "which_key_ignore" },
-        ["<leader>gv"] = { 
+        ["<leader>gv"] = {
           function()
-            if next(require('diffview.lib').views) == nil then
-              vim.cmd('DiffviewOpen')
+            if next(require("diffview.lib").views) == nil then
+              vim.cmd "DiffviewOpen"
             else
-              vim.cmd('DiffviewClose')
+              vim.cmd "DiffviewClose"
             end
           end,
-          desc = "Toggle Diffview" },
-        ["<leader>gh"] = { 
-          "<cmd>DiffviewFileHistory %<CR>",
-          desc = "Open Diffview file history for current file" 
+          desc = "Toggle Diffview",
         },
-         ["<leader>fv"] =  {
-          function()
-            if (vim.api.nvim_buf_get_option(0, "filetype")=="netrw")
-            then vim.api.nvim_exec("close", false) 
-            else vim.api.nvim_exec(":Vexplore", false) 
-            end
-          end,
-          desc = "Toggle file explorer",
-          }
+        ["<leader>gh"] = {
+          "<cmd>DiffviewFileHistory %<CR>",
+          desc = "Open Diffview file history for current file",
+        },
+        ["<leader>s"] = {
+          "<cmd>noautocmd w <CR>",
+          desc = "Save without formatting",
+        },
+        ["x"] = {
+          '"_x',
+          desc = "which_key_ignore",
+        },
       },
       i = {
         ["<M-j>"] = { "<Esc>:m .+1<CR>==gi", desc = "which_key_ignore" },

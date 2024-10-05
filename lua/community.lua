@@ -8,25 +8,29 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.completion/copilot-cmp" },
-  { import = "astrocommunity.diagnostics/error-lens-nvim" },
   { import = "astrocommunity.diagnostics/trouble-nvim" },
-  { import = "astrocommunity.git/diffview-nvim" },
   { import = "astrocommunity.editing-support/rainbow-delimiters-nvim" },
-  { import = "astrocommunity.editing-support/conform-nvim" },
   { import = "astrocommunity.editing-support/undotree" },
   { import = "astrocommunity.editing-support/vim-move" },
-  { import = "astrocommunity.motion/harpoon" },
+  { import = "astrocommunity.git/diffview-nvim" },
   { import = "astrocommunity.git/git-blame-nvim" },
+  { import = "astrocommunity.git/neogit" },
   { import = "astrocommunity.lsp/ts-error-translator-nvim" },
+  { import = "astrocommunity.motion/marks-nvim" },
+  { import = "astrocommunity.motion/mini-ai" },
   { import = "astrocommunity.pack/tailwindcss" },
+  { import = "astrocommunity.search/nvim-spectre" },
   { import = "astrocommunity.pack/typescript" },
+  { import = "astrocommunity.bars-and-lines/scope-nvim" },
+  { import = "astrocommunity.quickfix/nvim-bqf" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+  { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.scrolling/neoscroll-nvim" },
   { import = "astrocommunity.scrolling/satellite-nvim" },
   { import = "astrocommunity.utility/noice-nvim" },
   { import = "astrocommunity.utility/telescope-live-grep-args-nvim" },
-  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   {
     "copilot-cmp",
     opts = function(_, opts)
@@ -39,7 +43,7 @@ return {
     "noice.nvim",
     opts = function(_, opts)
       opts.presets.bottom_search = false
-      opts.lsp.signature = { enabled = false }
+      opts.lsp.signature = { enabled = true }
       return opts
     end,
   },

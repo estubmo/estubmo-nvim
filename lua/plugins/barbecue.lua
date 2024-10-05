@@ -8,6 +8,7 @@ return {
     "nvim-tree/nvim-web-devicons", -- optional dependency
   },
   opts = {
-    -- configurations go here
+    include_buftypes = { "" },
+    exclude_filetypes = { "gitcommit", "Trouble", "toggleterm", "Spectre" },
   },
 }
