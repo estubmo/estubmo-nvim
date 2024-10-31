@@ -15,6 +15,19 @@ return {
       require("telescope").load_extension "media_files"
 
       require("telescope").setup {
+        defaults = {
+          layout_strategy = "flex",
+          sorting_strategy = "descending",
+          layout_config = {
+            prompt_position = "bottom",
+            -- horizontal = {
+            --   prompt_position = "bottom",
+            -- },
+            -- vertical = {
+            --   prompt_position = "bottom",
+            -- },
+          },
+        },
         pickers = {
           find_files = {
             hidden = true,
