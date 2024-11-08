@@ -1,3 +1,10 @@
+local js_like = {
+  left = 'console.info("',
+  right = '")',
+  mid_var = '", ',
+  right_var = ")",
+}
+
 return {
   "andrewferrier/debugprint.nvim",
   opts = {
@@ -22,6 +29,12 @@ return {
     commands = {
       toggle_comment_debug_prints = "ToggleCommentDebugPrints",
       delete_debug_prints = "DeleteDebugPrints",
+    },
+    filetypes = {
+      ["javascript"] = js_like,
+      ["javascriptreact"] = js_like,
+      ["typescript"] = js_like,
+      ["typescriptreact"] = js_like,
     },
   },
 }

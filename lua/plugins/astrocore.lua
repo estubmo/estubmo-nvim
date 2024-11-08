@@ -89,8 +89,8 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
-        ["<C-d>"] = { "<C-d>zz", desc = "which_key_ignore" },
-        ["<C-u>"] = { "<C-u>zz", desc = "which_key_ignore" },
+        -- ["<C-d>"] = { "<C-d>zz", desc = "which_key_ignore" },
+        -- ["<C-u>"] = { "<C-u>zz", desc = "which_key_ignore" },
         ["n"] = { "nzzzv", desc = "which_key_ignore" },
         ["N"] = { "Nzzzv", desc = "which_key_ignore" },
         ["<leader>k"] = { "<cmd>lnext<CR>zz", desc = "which_key_ignore" },

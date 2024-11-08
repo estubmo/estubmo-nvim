@@ -30,7 +30,7 @@ return {
   { import = "astrocommunity.editing-support/copilotchat-nvim" },
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.recipes.vscode-icons" },
-  { import = "astrocommunity.scrolling/neoscroll-nvim" },
+  { import = "astrocommunity.scrolling/vim-smoothie" },
   -- { import = "astrocommunity.scrolling/satellite-nvim" },
   { import = "astrocommunity.scrolling/nvim-scrollbar" },
   { import = "astrocommunity.utility/noice-nvim" },
